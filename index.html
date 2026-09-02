@@ -47,7 +47,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
 .toggle{width:30px;height:16px;background:#1e3044;border-radius:8px;position:relative;cursor:pointer;border:none;transition:.2s;}
 .toggle.on{background:#526D72;} .toggle::after{content:'';width:12px;height:12px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:.2s;} .toggle.on::after{left:16px;}
 .data-table{width:100%;border-collapse:collapse;font-size:.72rem;}
-.data-table th{background:#0d1b2a;color:#8fa3b0;font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;padding:7px 8px;text-align:left;border-bottom:1px solid #1e3044;}
+.data-table th{background:#0d1b2a;color:#8fa3b0;font-weight:600;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;padding:7px 8px;text-align:left;border-bottom:1px solid #1e3044;position:sticky;top:0;z-index:2;}
 .data-table td{padding:6px 8px;font-size:.82rem;border-bottom:1px solid #1e3044;color:#c8d8e2;}
 .data-table tr:hover td{background:rgba(82,109,114,.07);}
 .vrow td{background:rgba(201,168,76,.08)!important;}
@@ -119,11 +119,11 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
 <!-- OVERVIEW -->
 <div id="view-overview" class="view active">
   <div class="kpi-row">
-    <div class="kpi teal"><div class="kpi-label">Total Views</div><div class="kpi-value" id="kpi-views">354,023</div><div class="kpi-sub" id="kpi-views-sub">All 61 posts, all-time</div></div>
-    <div class="kpi gold"><div class="kpi-label">Avg Views / Post</div><div class="kpi-value" id="kpi-avgviews">3,187</div><div class="kpi-sub">Excl. viral post #39</div></div>
-    <div class="kpi green"><div class="kpi-label">Followers Gained</div><div class="kpi-value" id="kpi-follows">604</div><div class="kpi-sub" id="kpi-follows-sub">5.3 avg/post excl. viral</div></div>
-    <div class="kpi blue"><div class="kpi-label">Avg Engagement %</div><div class="kpi-value" id="kpi-er">2.59%</div><div class="kpi-sub">Excl. viral (industry avg ~1%)</div></div>
-    <div class="kpi purple"><div class="kpi-label">Total Saves</div><div class="kpi-value" id="kpi-saves">246</div><div class="kpi-sub" id="kpi-saves-sub">3.0 avg/post excl. viral</div></div>
+    <div class="kpi teal"><div class="kpi-label">Total Views</div><div class="kpi-value" id="kpi-views">429,873</div><div class="kpi-sub" id="kpi-views-sub">All 69 posts, all-time</div></div>
+    <div class="kpi gold"><div class="kpi-label">Avg Views / Post</div><div class="kpi-value" id="kpi-avgviews">3,362</div><div class="kpi-sub">Excl. viral post #39</div></div>
+    <div class="kpi green"><div class="kpi-label">Followers Gained</div><div class="kpi-value" id="kpi-follows">788</div><div class="kpi-sub" id="kpi-follows-sub">6.2 avg/post excl. viral</div></div>
+    <div class="kpi blue"><div class="kpi-label">Avg Engagement %</div><div class="kpi-value" id="kpi-er">2.98%</div><div class="kpi-sub">Excl. viral (industry avg ~1%)</div></div>
+    <div class="kpi purple"><div class="kpi-label">Total Saves</div><div class="kpi-value" id="kpi-saves">386</div><div class="kpi-sub" id="kpi-saves-sub">4.2 avg/post excl. viral</div></div>
   </div>
   <div class="chart-row r1">
     <div class="chart-box">
@@ -256,7 +256,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   <!-- TIME BLOCK OBSERVATIONS -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>Time Block Observations</h3>
-    <div class="sub">Qualitative analysis from 61 posts. Use to decide when to schedule priority content.</div>
+    <div class="sub">Qualitative analysis from 69 posts. Use to decide when to schedule priority content.</div>
     <div style="overflow-x:auto;margin-top:10px;">
       <table class="data-table">
         <thead><tr><th>Time Block</th><th>Observation</th></tr></thead>
@@ -320,7 +320,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   <!-- MUSIC RECOMMENDATIONS -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>Music Strategy Rules</h3>
-    <div class="sub">6 principles derived from 61 posts of audio performance data.</div>
+    <div class="sub">6 principles derived from 69 posts of audio performance data.</div>
     <div style="display:grid;gap:10px;margin-top:12px;">
       <div style="background:#0d1b2a;border-left:3px solid #c9a84c;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.68rem;font-weight:700;color:#c9a84c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Rule 1: Match music energy to process</div>
@@ -480,7 +480,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   <!-- WHAT IS WORKING -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>What Is Working</h3>
-    <div class="sub">Key signals from 61 posts. Source: INSIGHTS tab, Aug 2026.</div>
+    <div class="sub">Key signals from 69 posts. Source: INSIGHTS tab, Aug 2026.</div>
     <div style="display:grid;gap:10px;margin-top:12px;">
       <div style="background:#0d1b2a;border-left:3px solid #526D72;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.72rem;font-weight:700;color:#526D72;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">CNC Time Lapse = Highest Reach Content</div>
@@ -708,7 +708,7 @@ const TAGS={
   60:["#cncmachining","#cnc","#boatbuilder","#manufacturing","#moldmaking"],
   61:["#moldmaking","#howitsmade","#compositetooling","#boatbuilding","#marineindustry"],
   62:["#fiberglass","#lamination","#boatbuilding","#moldmaking","#composites"],
-  63:["#cnc","#cncmachining","#boatbuilding","#moldmaking","#manufacturing"]
+  63:["#cnc","#cncmachining","#boatbuilding","#moldmaking","#manufacturing"],
   64:["#boatbuilder","#navalarchitecture","#yachtdesign","#sportfish","#newboat"],
   65:["#moldmaking","#boatbuilder","#compositetooling","#howitsmade","#qualityassurance"],
   66:["#boatbuilding","#compositetooling","#marinemanufacturing","#moldmaking","#howitsmade"],

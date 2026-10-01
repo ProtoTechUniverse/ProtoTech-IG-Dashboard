@@ -92,9 +92,9 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
 <div class="header">
   <div>
     <h1><span>ProtoTech</span>: Instagram Analytics Dashboard</h1>
-    <p>@prototechmfg &nbsp;|&nbsp; Feb 25, 2025 to Sep 1, 2026 &nbsp;|&nbsp; 69 posts tracked</p>
+    <p>@prototechmfg &nbsp;|&nbsp; Feb 25, 2025 to Sep 28, 2026 &nbsp;|&nbsp; 73 posts tracked</p>
   </div>
-  <div><div class="badge">B2B Lead Gen Focus</div><p class="hr">As of Sep 2, 2026</p></div>
+  <div><div class="badge">B2B Lead Gen Focus</div><p class="hr">As of Sep 30, 2026</p></div>
 </div>
 <div class="tabs">
   <div class="tab active" onclick="sv('overview',this)">Overview</div>
@@ -119,11 +119,11 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
 <!-- OVERVIEW -->
 <div id="view-overview" class="view active">
   <div class="kpi-row">
-    <div class="kpi teal"><div class="kpi-label">Total Views</div><div class="kpi-value" id="kpi-views">429,873</div><div class="kpi-sub" id="kpi-views-sub">All 69 posts, all-time</div></div>
-    <div class="kpi gold"><div class="kpi-label">Avg Views / Post</div><div class="kpi-value" id="kpi-avgviews">3,362</div><div class="kpi-sub">Excl. viral post #39</div></div>
-    <div class="kpi green"><div class="kpi-label">Followers Gained</div><div class="kpi-value" id="kpi-follows">788</div><div class="kpi-sub" id="kpi-follows-sub">6.2 avg/post excl. viral</div></div>
-    <div class="kpi blue"><div class="kpi-label">Avg Engagement %</div><div class="kpi-value" id="kpi-er">2.98%</div><div class="kpi-sub">Excl. viral (industry avg ~1%)</div></div>
-    <div class="kpi purple"><div class="kpi-label">Total Saves</div><div class="kpi-value" id="kpi-saves">386</div><div class="kpi-sub" id="kpi-saves-sub">4.2 avg/post excl. viral</div></div>
+    <div class="kpi teal"><div class="kpi-label">Total Views</div><div class="kpi-value" id="kpi-views">466,088</div><div class="kpi-sub" id="kpi-views-sub">All 73 posts, all-time</div></div>
+    <div class="kpi gold"><div class="kpi-label">Avg Views / Post</div><div class="kpi-value" id="kpi-avgviews">3,652</div><div class="kpi-sub">Excl. viral post #39</div></div>
+    <div class="kpi green"><div class="kpi-label">Followers Gained</div><div class="kpi-value" id="kpi-follows">886</div><div class="kpi-sub" id="kpi-follows-sub">7.0 avg/post excl. viral</div></div>
+    <div class="kpi blue"><div class="kpi-label">Avg Engagement %</div><div class="kpi-value" id="kpi-er">3.19%</div><div class="kpi-sub">Excl. viral (industry avg ~1%)</div></div>
+    <div class="kpi purple"><div class="kpi-label">Total Saves</div><div class="kpi-value" id="kpi-saves">471</div><div class="kpi-sub" id="kpi-saves-sub">5.0 avg/post excl. viral</div></div>
   </div>
   <div class="chart-row r1">
     <div class="chart-box">
@@ -131,7 +131,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
       <div class="toggle-row">
         <span class="tlabel">Include viral post</span>
         <button class="toggle on" id="vtog" onclick="toggleV()"></button>
-        <span class="tlabel" style="color:#c9a84c;">Post #39 Jun 17 &quot;While the world sleeps&quot; = 201,248 views</span>
+        <span class="tlabel" style="color:#c9a84c;">Post #39 Jun 17 &quot;While the world sleeps&quot; = 203,168 views</span>
       </div>
       <canvas id="timelineC" class="tall"></canvas>
     </div>
@@ -166,7 +166,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   </div>
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>Top 10 Posts by Views (Excl. Viral)</h3>
-    <div class="sub">Post #39 (201,248 views) excluded to show true organic performance range</div>
+    <div class="sub">Post #39 (203,168 views) excluded to show true organic performance range</div>
     <div style="overflow-x:auto;">
       <table class="data-table"><thead><tr>
         <th>#</th><th>Date</th><th>Description</th><th>Format</th><th>Category</th>
@@ -188,6 +188,32 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
       <h3>Avg Play Time by Content Category</h3>
       <div class="sub">Seconds viewers watch on average by category. Reels only. Higher = content holds attention longer.</div>
       <canvas id="playC"></canvas>
+    </div>
+  </div>
+
+  <!-- POSTING PATTERNS -->
+  <div class="chart-row r2b" style="margin-top:10px;">
+    <div class="chart-box">
+      <h3>Avg Views by Day of Week</h3>
+      <div class="sub">All 73 posts. Excl. viral #39. Post count shown above each bar.</div>
+      <canvas id="dayViewC" class="tall"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Avg ER% by Day of Week</h3>
+      <div class="sub">Engagement rate by posting day. Excl. viral. Higher = more engaging audience on that day.</div>
+      <canvas id="pdErC" class="tall"></canvas>
+    </div>
+  </div>
+  <div class="chart-row r2b">
+    <div class="chart-box">
+      <h3>Avg Views by Time of Day</h3>
+      <div class="sub">n=23-73 only (51 posts with confirmed publish times). Morning = 6am-noon, Afternoon = noon-6pm, Evening = 6pm-midnight, Off-Hours = midnight-6am.</div>
+      <canvas id="timeViewC"></canvas>
+    </div>
+    <div class="chart-box">
+      <h3>Avg Follows by Time of Day</h3>
+      <div class="sub">Follows per post by publish window. Excl. viral.</div>
+      <canvas id="timeFollowC"></canvas>
     </div>
   </div>
 </div>
@@ -488,19 +514,19 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   <!-- WHAT IS WORKING -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>What Is Working</h3>
-    <div class="sub">Key signals from 69 posts. Source: INSIGHTS tab, Aug 2026.</div>
+    <div class="sub">Key signals from 73 posts. Source: Meta Business Suite Export, Sep 2026.</div>
     <div style="display:grid;gap:10px;margin-top:12px;">
       <div style="background:#0d1b2a;border-left:3px solid #526D72;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.72rem;font-weight:700;color:#526D72;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">CNC Time Lapse = Highest Reach Content</div>
-        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">The viral post (191K views, post #39) was a night CNC time lapse. CNC Install lapse (#36) also outperformed. Time lapses compress impressive work into shareable moments. Run a time lapse on every major CNC job. This is repeatable.</div>
+        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">The viral post (203K views, post #39) was a night CNC time lapse. CNC Install lapse (#36) also outperformed. Time lapses compress impressive work into shareable moments. Run a time lapse on every major CNC job. This is repeatable.</div>
       </div>
       <div style="background:#0d1b2a;border-left:3px solid #526D72;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.72rem;font-weight:700;color:#526D72;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Defense/USV = Highest Quality Lead Generator</div>
-        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">Post #48 (Jul 9 defense/USV): 167 likes, 14 saves, 14 new follows from 4,082 reach = 5.17% engagement. Highest engagement in the dataset, excluding viral. Defense contractors and program managers are watching this account. Post MORE defense capability content. Use #defensetech and #usv.</div>
+        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">Post #48 (Jul 9 defense/USV): 173 likes, 17 saves, 15 new follows from 4,460 reach = 5.29% engagement. Highest engagement in the dataset, excluding viral. Defense contractors and program managers are watching this account. Post MORE defense capability content. Use #defensetech and #usv.</div>
       </div>
       <div style="background:#0d1b2a;border-left:3px solid #526D72;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.72rem;font-weight:700;color:#526D72;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">People and Culture Posts Drive the Most New Followers</div>
-        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">Post #43 (Luke approves, ship it!): 31 new follows. Post #46 (boat reveal): 33 new follows. Post #32 (bubble blasting): 23 new follows. People want to see your team. Faces, reactions, and energy convert viewers to followers better than process content alone.</div>
+        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">Post #43 (Luke approves, ship it!): 33 new follows. Post #46 (boat reveal): 35 new follows. Post #32 (bubble blasting): 24 new follows. People want to see your team. Faces, reactions, and energy convert viewers to followers better than process content alone.</div>
       </div>
       <div style="background:#0d1b2a;border-left:3px solid #526D72;border-radius:6px;padding:12px 16px;">
         <div style="font-size:.72rem;font-weight:700;color:#526D72;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Saves Are Your Best Lead Quality Signal</div>
@@ -590,6 +616,22 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
     </div>
   </div>
 
+  <!-- CAPTION AND CONTENT PATTERNS -->
+  <div class="chart-box" style="margin-bottom:14px;">
+    <h3>Caption and Content Patterns to Fix</h3>
+    <div class="sub">Patterns identified from reviewing published posts. Prevent repeating these going forward.</div>
+    <div style="display:grid;gap:10px;margin-top:12px;">
+      <div style="background:#0d1b2a;border-left:3px solid #e74c3c;border-radius:6px;padding:12px 16px;">
+        <div style="font-size:.72rem;font-weight:700;color:#e74c3c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Repetitive "Stay Tuned" Captions: 3 Uses in 11 Days</div>
+        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">The phrase "stay tuned" appeared in three consecutive Savage 35 captions within less than two weeks: Post #69 (Sep 1): "Stay tuned to follow the build progress of this Savage 35" / Post #70 (Sep 10): "Savage 35 hull 1 infusion. Stay tuned for build updates." / Post #71 (Sep 14): "Finishing touches before final QC and ship." — the repetition on #69 and #70 specifically is the problem. Repeating the same phrase signals low effort to returning viewers. For series content, the caption should reference what is new in this episode, not repeat a generic follow prompt. Alternatives that work without "stay tuned": "Hull 1 infusion underway. Resin down, glass on." / "This is where the Savage 35 build gets real: first infusion." / "Follow the build. Next up: fairing and finish." / "Hull 1, day one. Watch this space." Strong series content earns follows by showing progress, not by asking people to follow.</div>
+      </div>
+      <div style="background:#0d1b2a;border-left:3px solid #e74c3c;border-radius:6px;padding:12px 16px;">
+        <div style="font-size:.72rem;font-weight:700;color:#e74c3c;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Reused Footage: Post #71 Repeated Footage from Post #61</div>
+        <div style="font-size:.74rem;color:#c8d8e2;line-height:1.6;">Post #71 (Sep 14, buffing/polishing before ship) reused footage from Post #61 (Aug 3, mold polishing/buffing). Both posts show a similar shop buffing process from the same angle and were not caught until after #71 was live. Repeat footage in a small account is highly visible to followers who have seen both posts. The result is a perception of recycled content rather than new work. Before posting any finishing or process reel, confirm the footage has not appeared in a prior post. The production team needs a simple pre-post checklist: does this footage appear anywhere in our last 30 posts?</div>
+      </div>
+    </div>
+  </div>
+
   <!-- NEXT STEPS -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>Next Steps</h3>
@@ -597,7 +639,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
     <div style="display:grid;gap:10px;margin-top:12px;">
       <div style="background:#0d1b2a;border:1px solid #1e3044;border-radius:6px;padding:12px 16px;display:flex;gap:14px;align-items:flex-start;">
         <div style="font-size:1.2rem;font-weight:800;color:#526D72;min-width:28px;">1</div>
-        <div><div style="font-size:.72rem;font-weight:700;color:#e8eef2;margin-bottom:3px;">Build a 30-Day Content Calendar</div><div style="font-size:.73rem;color:#8fa3b0;line-height:1.6;">3 posts/week minimum. Tuesday and Thursday afternoon are best windows. Monday afternoon is a strong secondary slot. Mix: 1 CNC/process post, 1 people/culture post, 1 PTYD/engineering or defense post. Keep MFG content at 70-75% of total.</div></div>
+        <div><div style="font-size:.72rem;font-weight:700;color:#e8eef2;margin-bottom:3px;">Build a 30-Day Content Calendar</div><div style="font-size:.73rem;color:#8fa3b0;line-height:1.6;">3 posts/week minimum. Thursday and Tuesday are top-performing days (4,594 and 4,433 avg views across 12 and 10 posts respectively). Wednesday is the next best slot (3,580 avg, 12 posts). Afternoon posts (noon to 6pm) are the most common window and perform consistently. Mix: 1 CNC/process post, 1 people/culture post, 1 PTYD/engineering or defense post. Keep MFG content at 70-75% of total.</div></div>
       </div>
       <div style="background:#0d1b2a;border:1px solid #1e3044;border-radius:6px;padding:12px 16px;display:flex;gap:14px;align-items:flex-start;">
         <div style="font-size:1.2rem;font-weight:800;color:#526D72;min-width:28px;">2</div>
@@ -609,17 +651,17 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   <!-- VIRAL POST BREAKDOWN -->
   <div class="chart-box" style="margin-bottom:14px;">
     <h3>Viral Post Breakdown: Post #39</h3>
-    <div class="sub">Jun 17, 2026 | "While the world sleeps, the CNC keeps cutting." | 201,248 views</div>
+    <div class="sub">Jun 17, 2026 | "While the world sleeps, the CNC keeps cutting." | 203,168 views</div>
     <div style="overflow-x:auto;margin-top:10px;">
       <table class="data-table">
         <thead><tr><th>Metric</th><th>Viral Post #39</th><th>Account Avg (ex-viral)</th><th>Difference</th><th>Why It Matters</th></tr></thead>
         <tbody>
-          <tr class="vrow"><td>Views</td><td><b>201,248</b></td><td>3,362</td><td style="color:#c9a84c;font-weight:700">60x higher</td><td>Algorithm served it to a massive cold audience via shares</td></tr>
-          <tr><td>Reach</td><td><b>105,051</b></td><td>2,253</td><td style="color:#c9a84c;font-weight:700">47x higher</td><td>Broad hashtags opened it to non-followers</td></tr>
-          <tr class="vrow"><td>Shares</td><td><b>90</b></td><td>8.4</td><td style="color:#c9a84c;font-weight:700">11x higher</td><td>SHARES drove the viral loop. This is the key metric.</td></tr>
-          <tr><td>Saves</td><td><b>101</b></td><td>4.2</td><td style="color:#c9a84c;font-weight:700">24x higher</td><td>Industry professionals bookmarked it for reference</td></tr>
-          <tr class="vrow"><td>Follows</td><td><b>366</b></td><td>6.2</td><td style="color:#c9a84c;font-weight:700">59x higher</td><td>Broad tags brought in a larger pool to convert</td></tr>
-          <tr><td>Engagement %</td><td>0.67%</td><td>2.98%</td><td style="color:#8fa3b0">Lower</td><td>Normal for viral: huge reach dilutes % even with big numbers</td></tr>
+          <tr class="vrow"><td>Views</td><td><b>203,168</b></td><td>3,652</td><td style="color:#c9a84c;font-weight:700">56x higher</td><td>Algorithm served it to a massive cold audience via shares</td></tr>
+          <tr><td>Reach</td><td><b>106,283</b></td><td>2,431</td><td style="color:#c9a84c;font-weight:700">44x higher</td><td>Broad hashtags opened it to non-followers</td></tr>
+          <tr class="vrow"><td>Shares</td><td><b>94</b></td><td>9.5</td><td style="color:#c9a84c;font-weight:700">10x higher</td><td>SHARES drove the viral loop. This is the key metric.</td></tr>
+          <tr><td>Saves</td><td><b>108</b></td><td>5.0</td><td style="color:#c9a84c;font-weight:700">22x higher</td><td>Industry professionals bookmarked it for reference</td></tr>
+          <tr class="vrow"><td>Follows</td><td><b>381</b></td><td>7.0</td><td style="color:#c9a84c;font-weight:700">54x higher</td><td>Broad tags brought in a larger pool to convert</td></tr>
+          <tr><td>Engagement %</td><td>1.13%</td><td>3.19%</td><td style="color:#8fa3b0">Lower</td><td>Normal for viral: huge reach dilutes % even with big numbers</td></tr>
           <tr class="vrow"><td>Duration</td><td>9 seconds</td><td>14s avg</td><td style="color:#c9a84c;font-weight:700">Shorter</td><td>Short = high rewatch rate. Algorithm loves completion %</td></tr>
           <tr><td>Views/Reach ratio</td><td>1.92x</td><td>1.50x</td><td style="color:#c9a84c;font-weight:700">0.42x more</td><td>People rewatched it, signals quality to the algorithm</td></tr>
         </tbody>
@@ -668,7 +710,7 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
     <div class="sub">Sorted by date. Viral post highlighted gold.</div>
     <div style="overflow-x:auto;max-height:72vh;overflow-y:auto;">
       <table class="data-table"><thead><tr>
-        <th>#</th><th>Date</th><th>Format</th><th>Category</th><th>Description</th><th>Hashtags</th>
+        <th>#</th><th>Date</th><th>Day</th><th>Time</th><th>Format</th><th>Category</th><th>Description</th><th>Hashtags</th>
         <th class="nr">Views</th><th class="nr">Reach</th><th class="nr">Likes</th>
         <th class="nr">Cmt</th><th class="nr">Shares</th><th class="nr">Saves</th><th class="nr">Follows</th><th class="nr">ER%</th>
       </tr></thead><tbody id="apBody"></tbody></table>
@@ -676,10 +718,14 @@ body{font-family:'Calibri',system-ui,sans-serif;font-size:19px;background:#0d1b2
   </div>
 </div>
 
-<div class="footer">ProtoTech Manufacturing Inc &nbsp;|&nbsp; Instagram Analytics Dashboard &nbsp;|&nbsp; Source: Meta Business Suite Export &nbsp;|&nbsp; 69 posts Feb 2025 to Sep 2026</div>
+<div class="footer">ProtoTech Manufacturing Inc &nbsp;|&nbsp; Instagram Analytics Dashboard &nbsp;|&nbsp; Source: Meta Business Suite Export &nbsp;|&nbsp; 73 posts Feb 2025 to Sep 2026</div>
 
 <script>
-const POSTS=[{"n":1,"date":"2025-02-25","views":3387,"reach":1777,"likes":58,"comments":1,"shares":10,"saves":3,"follows":5,"format":"Reel","category":"Services/Other","caption":"Reverse engineering services","er":4.05,"viral":false},{"n":2,"date":"2025-05-14","views":1820,"reach":1131,"likes":25,"comments":1,"shares":3,"saves":2,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Resin infusion 23ft deck","er":2.74,"viral":false},{"n":3,"date":"2025-05-15","views":1993,"reach":1173,"likes":37,"comments":2,"shares":3,"saves":1,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Long-blocking hull mirror finish","er":3.67,"viral":false},{"n":4,"date":"2025-05-16","views":2130,"reach":1253,"likes":54,"comments":0,"shares":6,"saves":6,"follows":0,"format":"Image","category":"Defense","caption":"Maritime superiority defense","er":5.27,"viral":false},{"n":5,"date":"2025-05-19","views":1835,"reach":1243,"likes":26,"comments":0,"shares":5,"saves":3,"follows":0,"format":"Reel","category":"Services/Other","caption":"3D scanning services","er":2.74,"viral":false},{"n":6,"date":"2025-05-20","views":1380,"reach":682,"likes":29,"comments":0,"shares":5,"saves":0,"follows":3,"format":"Image","category":"Naval Arch/Design","caption":"60ft motor yacht concept","er":4.99,"viral":false},{"n":7,"date":"2025-05-22","views":2783,"reach":1801,"likes":69,"comments":2,"shares":8,"saves":1,"follows":5,"format":"Reel","category":"Composite/Lam","caption":"Swipe right on this mold","er":4.44,"viral":false},{"n":8,"date":"2025-05-23","views":1640,"reach":932,"likes":38,"comments":0,"shares":8,"saves":4,"follows":2,"format":"Image","category":"Naval Arch/Design","caption":"Working lines sportfish concept","er":5.36,"viral":false},{"n":9,"date":"2025-05-27","views":2108,"reach":1280,"likes":33,"comments":1,"shares":7,"saves":5,"follows":6,"format":"Reel","category":"Mold/Tooling","caption":"Hull plug prep for primer","er":3.59,"viral":false},{"n":10,"date":"2025-05-30","views":2091,"reach":1410,"likes":50,"comments":3,"shares":6,"saves":0,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"Built with patience","er":4.18,"viral":false},{"n":11,"date":"2025-05-31","views":2110,"reach":1452,"likes":48,"comments":1,"shares":5,"saves":2,"follows":9,"format":"Reel","category":"Composite/Lam","caption":"Bam-ba-lam","er":3.86,"viral":false},{"n":12,"date":"2025-06-03","views":6580,"reach":5316,"likes":67,"comments":7,"shares":15,"saves":1,"follows":7,"format":"Reel","category":"CNC Machining","caption":"CNC capacity available","er":1.69,"viral":false},{"n":13,"date":"2025-06-17","views":943,"reach":683,"likes":12,"comments":0,"shares":1,"saves":0,"follows":1,"format":"Reel","category":"Services/Other","caption":"Solace 37CS on TV","er":1.9,"viral":false},{"n":14,"date":"2025-06-23","views":1521,"reach":1064,"likes":35,"comments":2,"shares":4,"saves":2,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Finish your mold deserves","er":4.04,"viral":false},{"n":15,"date":"2025-06-26","views":5825,"reach":3934,"likes":48,"comments":3,"shares":11,"saves":6,"follows":11,"format":"Reel","category":"CNC Machining","caption":"CNC feed rate precision","er":1.73,"viral":false},{"n":16,"date":"2025-07-03","views":1764,"reach":1175,"likes":37,"comments":0,"shares":0,"saves":0,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Mold shipped to customer","er":3.15,"viral":false},{"n":17,"date":"2025-07-04","views":1619,"reach":1090,"likes":31,"comments":1,"shares":3,"saves":0,"follows":1,"format":"Reel","category":"Services/Other","caption":"4th of July shine","er":3.21,"viral":false},{"n":18,"date":"2025-07-06","views":1558,"reach":1131,"likes":31,"comments":0,"shares":4,"saves":1,"follows":2,"format":"Reel","category":"Naval Arch/Design","caption":"Solace 41CS naval architecture","er":3.18,"viral":false},{"n":19,"date":"2025-07-29","views":2268,"reach":893,"likes":30,"comments":1,"shares":2,"saves":5,"follows":0,"format":"Carousel","category":"Naval Arch/Design","caption":"Alera debut model","er":4.26,"viral":false},{"n":20,"date":"2025-08-06","views":1519,"reach":1033,"likes":38,"comments":3,"shares":4,"saves":3,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Deck mold ready for work","er":4.65,"viral":false},{"n":21,"date":"2025-08-22","views":1801,"reach":1136,"likes":13,"comments":0,"shares":1,"saves":1,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Dry layup for infusion","er":1.32,"viral":false},{"n":22,"date":"2025-10-27","views":3136,"reach":1414,"likes":75,"comments":0,"shares":8,"saves":3,"follows":6,"format":"Image","category":"Services/Other","caption":"Team milestone 25 to 60 employees","er":6.08,"viral":false},{"n":23,"date":"2026-02-18","views":2378,"reach":1686,"likes":40,"comments":1,"shares":4,"saves":0,"follows":6,"format":"Reel","category":"Services/Other","caption":"Sharp execution early mornings","er":2.43,"viral":false},{"n":24,"date":"2026-03-03","views":1400,"reach":605,"likes":34,"comments":4,"shares":2,"saves":3,"follows":2,"format":"Carousel","category":"Naval Arch/Design","caption":"Veyra 60 concept","er":6.78,"viral":false},{"n":25,"date":"2026-03-04","views":947,"reach":533,"likes":9,"comments":1,"shares":0,"saves":0,"follows":0,"format":"Image","category":"CNC Machining","caption":"CNC availability ad","er":1.88,"viral":false},{"n":26,"date":"2026-03-18","views":4747,"reach":3197,"likes":55,"comments":1,"shares":3,"saves":0,"follows":0,"format":"Reel","category":"Composite/Lam","caption":"Clean layup fiberglass","er":1.75,"viral":false},{"n":27,"date":"2026-03-20","views":2452,"reach":1634,"likes":53,"comments":1,"shares":6,"saves":7,"follows":7,"format":"Reel","category":"Services/Other","caption":"Running full next slot open","er":3.73,"viral":false},{"n":28,"date":"2026-04-01","views":1863,"reach":1279,"likes":21,"comments":1,"shares":4,"saves":2,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Mold high-gloss finish","er":1.88,"viral":false},{"n":29,"date":"2026-04-06","views":2185,"reach":1526,"likes":16,"comments":0,"shares":1,"saves":0,"follows":2,"format":"Reel","category":"Naval Arch/Design","caption":"Tech for teams model review","er":1.05,"viral":false},{"n":30,"date":"2026-04-08","views":9031,"reach":7311,"likes":59,"comments":1,"shares":23,"saves":3,"follows":9,"format":"Reel","category":"CNC Machining","caption":"Full design cycle CNC to life","er":0.86,"viral":false},{"n":31,"date":"2026-05-20","views":2611,"reach":1806,"likes":23,"comments":0,"shares":5,"saves":1,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Guide coat roadmap","er":1.33,"viral":false},{"n":32,"date":"2026-05-21","views":7344,"reach":5611,"likes":89,"comments":0,"shares":11,"saves":8,"follows":24,"format":"Reel","category":"Composite/Lam","caption":"Bubble blasting hand laid","er":1.73,"viral":false},{"n":33,"date":"2026-05-23","views":3430,"reach":2270,"likes":28,"comments":0,"shares":3,"saves":4,"follows":10,"format":"Reel","category":"Mold/Tooling","caption":"Pure plug perfection","er":1.41,"viral":false},{"n":34,"date":"2026-06-04","views":3463,"reach":2155,"likes":78,"comments":2,"shares":10,"saves":11,"follows":4,"format":"Reel","category":"Naval Arch/Design","caption":"Digital twin what work looks like","er":4.22,"viral":false},{"n":35,"date":"2026-06-05","views":1591,"reach":1124,"likes":11,"comments":0,"shares":6,"saves":2,"follows":1,"format":"Reel","category":"CNC Machining","caption":"DMS CNC teaser","er":1.16,"viral":false},{"n":36,"date":"2026-06-07","views":3442,"reach":2228,"likes":53,"comments":1,"shares":17,"saves":0,"follows":6,"format":"Reel","category":"CNC Machining","caption":"DMS CNC installation timelapse","er":2.42,"viral":false},{"n":37,"date":"2026-06-08","views":2575,"reach":1339,"likes":17,"comments":0,"shares":1,"saves":1,"follows":1,"format":"Reel","category":"Defense","caption":"Defense USV concept to deployment","er":1.34,"viral":false},{"n":38,"date":"2026-06-15","views":4530,"reach":2867,"likes":56,"comments":4,"shares":0,"saves":3,"follows":5,"format":"Reel","category":"Mold/Tooling","caption":"Quality assurance finishing process","er":2.2,"viral":false},{"n":39,"date":"2026-06-17","views":201248,"reach":105051,"likes":595,"comments":8,"shares":92,"saves":103,"follows":366,"format":"Reel","category":"CNC Machining","caption":"While the world sleeps CNC timelapse","er":0.67,"viral":true},{"n":40,"date":"2026-06-19","views":2266,"reach":1314,"likes":24,"comments":0,"shares":1,"saves":4,"follows":0,"format":"Reel","category":"CNC Machining","caption":"CNC toolpath customer vision","er":2.13,"viral":false},{"n":41,"date":"2026-06-23","views":7472,"reach":5265,"likes":68,"comments":3,"shares":6,"saves":9,"follows":13,"format":"Reel","category":"Composite/Lam","caption":"Every detail every pass","er":1.52,"viral":false},{"n":42,"date":"2026-06-26","views":4803,"reach":3108,"likes":41,"comments":0,"shares":8,"saves":3,"follows":4,"format":"Reel","category":"Composite/Lam","caption":"Sportfish layer by layer","er":1.42,"viral":false},{"n":43,"date":"2026-06-30","views":7363,"reach":4607,"likes":158,"comments":4,"shares":36,"saves":9,"follows":33,"format":"Reel","category":"Mold/Tooling","caption":"Luke approves ship it","er":3.71,"viral":false},{"n":44,"date":"2026-07-02","views":6459,"reach":4267,"likes":52,"comments":0,"shares":2,"saves":4,"follows":14,"format":"Reel","category":"Composite/Lam","caption":"Fresh clean lamination","er":1.31,"viral":false},{"n":45,"date":"2026-07-05","views":4231,"reach":3001,"likes":38,"comments":1,"shares":0,"saves":2,"follows":5,"format":"Reel","category":"Composite/Lam","caption":"No shortcuts skilled hands","er":1.37,"viral":false},{"n":46,"date":"2026-07-06","views":3658,"reach":2431,"likes":72,"comments":1,"shares":11,"saves":2,"follows":35,"format":"Image","category":"Naval Arch/Design","caption":"Unveiling soon classic lines","er":3.09,"viral":false},{"n":47,"date":"2026-07-08","views":3773,"reach":2788,"likes":28,"comments":1,"shares":4,"saves":4,"follows":1,"format":"Reel","category":"CNC Machining","caption":"Let er eat CNC","er":1.18,"viral":false},{"n":48,"date":"2026-07-09","views":6426,"reach":4340,"likes":173,"comments":5,"shares":26,"saves":16,"follows":14,"format":"Reel","category":"Defense","caption":"Defense concept to water-ready USV","er":4.47,"viral":false},{"n":49,"date":"2026-07-10","views":6912,"reach":4785,"likes":23,"comments":0,"shares":11,"saves":4,"follows":5,"format":"Reel","category":"CNC Machining","caption":"Measured methodical made right","er":0.56,"viral":false},{"n":50,"date":"2026-07-12","views":2881,"reach":2046,"likes":20,"comments":0,"shares":0,"saves":2,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Careful sanding radius checks","er":1.08,"viral":false},{"n":51,"date":"2026-07-13","views":1593,"reach":864,"likes":24,"comments":0,"shares":4,"saves":1,"follows":1,"format":"Reel","category":"Composite/Lam","caption":"Anticipation is building","er":2.89,"viral":false},{"n":52,"date":"2026-07-15","views":5071,"reach":3808,"likes":101,"comments":5,"shares":23,"saves":6,"follows":12,"format":"Reel","category":"CNC Machining","caption":"Sound effects with the team","er":2.94,"viral":false},{"n":53,"date":"2026-07-17","views":2346,"reach":1684,"likes":48,"comments":0,"shares":5,"saves":6,"follows":6,"format":"Reel","category":"Mold/Tooling","caption":"You don't rush a finish like this","er":3.21,"viral":false},{"n":54,"date":"2026-07-19","views":6511,"reach":4127,"likes":102,"comments":2,"shares":49,"saves":10,"follows":9,"format":"Reel","category":"Naval Arch/Design","caption":"Savage SSI35 grand reveal","er":2.76,"viral":false},{"n":55,"date":"2026-07-20","views":4654,"reach":2231,"likes":65,"comments":0,"shares":17,"saves":15,"follows":15,"format":"Reel","category":"Composite/Lam","caption":"Resin down glass on","er":3.59,"viral":false},{"n":56,"date":"2026-07-23","views":2067,"reach":1466,"likes":26,"comments":0,"shares":5,"saves":1,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"Nobody likes imperfections. Quality assurance every step","er":1.84,"viral":false},{"n":57,"date":"2026-07-25","views":1958,"reach":1390,"likes":29,"comments":0,"shares":4,"saves":1,"follows":3,"format":"Reel","category":"Mold/Tooling","caption":"Slowing it down to capture the finesse","er":2.16,"viral":false},{"n":58,"date":"2026-07-27","views":1642,"reach":776,"likes":39,"comments":0,"shares":8,"saves":0,"follows":2,"format":"Carousel","category":"Naval Arch/Design","caption":"The American day boat, reimagined. Refined aggression, handcrafted detail, luxury throughout","er":5.03,"viral":false},{"n":59,"date":"2026-07-30","views":3268,"reach":2414,"likes":48,"comments":1,"shares":3,"saves":8,"follows":8,"format":"Reel","category":"Defense","caption":"Built for the mission from the inside out","er":2.36,"viral":false},{"n":60,"date":"2026-07-31","views":4325,"reach":2937,"likes":62,"comments":2,"shares":7,"saves":12,"follows":5,"format":"Reel","category":"CNC Machining","caption":"Bringing another customer's dream to life","er":2.59,"viral":false},{"n":61,"date":"2026-08-03","views":1844,"reach":1267,"likes":30,"comments":1,"shares":2,"saves":1,"follows":3,"format":"Reel","category":"Mold/Tooling","caption":"On top of our game bringing out the perfect shine","er":2.92,"viral":false},{"n":62,"date":"2026-08-07","views":3961,"reach":2880,"likes":27,"comments":1,"shares":1,"saves":1,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Watch closely and you can see the glass change as the roller goes over it. Goes clear where the resin has full contact and the air is out.","er":1.11,"viral":false},{"n":63,"date":"2026-08-11","views":3257,"reach":2178,"likes":51,"comments":0,"shares":18,"saves":9,"follows":5,"format":"Reel","category":"CNC Machining","caption":"Every pass was programmed before the spindle touched the material. The machine doesn't stop. Neither do we.","er":3.81,"viral":false},{"n":64,"date":"2026-08-12","views":5208,"reach":3439,"likes":129,"comments":4,"shares":48,"saves":8,"follows":10,"format":"Reel","category":"Naval Arch/Design","caption":"New model alert. Construction of hull 1 is under way.","er":5.79,"viral":false},{"n":65,"date":"2026-08-13","views":4596,"reach":2993,"likes":101,"comments":2,"shares":29,"saves":15,"follows":24,"format":"Reel","category":"Mold/Tooling","caption":"Luke takes us through our mold inspection and QC process. Here is what he checks and why it matters.","er":5.71,"viral":false},{"n":66,"date":"2026-08-17","views":2077,"reach":1450,"likes":40,"comments":1,"shares":1,"saves":5,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"We use Dykem as our guide coat during mold finishing. It makes highs and lows easy to identify.","er":3.24,"viral":false},{"n":67,"date":"2026-08-21","views":3942,"reach":2912,"likes":87,"comments":0,"shares":10,"saves":12,"follows":20,"format":"Reel","category":"CNC Machining","caption":"Final machining on the spraycore. Last step on the CNC before we block sand away the tooling paths, refine the radius details by hand, and prepare for surface primer application.","er":4.43,"viral":false},{"n":68,"date":"2026-08-26","views":1677,"reach":1110,"likes":42,"comments":0,"shares":10,"saves":7,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Finished, wrapped, and ready to ship. Another plug out the door.","er":5.41,"viral":false},{"n":69,"date":"2026-09-01","views":6584,"reach":5130,"likes":87,"comments":1,"shares":9,"saves":12,"follows":22,"format":"Reel","category":"Composite/Lam","caption":"Stay tuned to follow the build progress of this Savage 35","er":2.55,"viral":false}];
+const POSTS=[{"n":1,"date":"2025-02-25","views":3387,"reach":1777,"likes":58,"comments":1,"shares":10,"saves":3,"follows":5,"format":"Reel","category":"Services/Other","caption":"Reverse engineering services","er":4.05,"viral":false},{"n":2,"date":"2025-05-14","views":1820,"reach":1131,"likes":25,"comments":1,"shares":3,"saves":2,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Resin infusion 23ft deck","er":2.74,"viral":false},{"n":3,"date":"2025-05-15","views":1993,"reach":1173,"likes":37,"comments":2,"shares":3,"saves":1,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Long-blocking hull mirror finish","er":3.67,"viral":false},{"n":4,"date":"2025-05-16","views":2130,"reach":1253,"likes":54,"comments":0,"shares":6,"saves":6,"follows":0,"format":"Image","category":"Defense","caption":"Maritime superiority defense","er":5.27,"viral":false},{"n":5,"date":"2025-05-19","views":1835,"reach":1243,"likes":26,"comments":0,"shares":5,"saves":3,"follows":0,"format":"Reel","category":"Services/Other","caption":"3D scanning services","er":2.74,"viral":false},{"n":6,"date":"2025-05-20","views":1380,"reach":682,"likes":29,"comments":0,"shares":5,"saves":0,"follows":3,"format":"Image","category":"Naval Arch/Design","caption":"60ft motor yacht concept","er":4.99,"viral":false},{"n":7,"date":"2025-05-22","views":2783,"reach":1801,"likes":69,"comments":2,"shares":8,"saves":1,"follows":5,"format":"Reel","category":"Composite/Lam","caption":"Swipe right on this mold","er":4.44,"viral":false},{"n":8,"date":"2025-05-23","views":1640,"reach":932,"likes":38,"comments":0,"shares":8,"saves":4,"follows":2,"format":"Image","category":"Naval Arch/Design","caption":"Working lines sportfish concept","er":5.36,"viral":false},{"n":9,"date":"2025-05-27","views":2108,"reach":1280,"likes":33,"comments":1,"shares":7,"saves":5,"follows":6,"format":"Reel","category":"Mold/Tooling","caption":"Hull plug prep for primer","er":3.59,"viral":false},{"n":10,"date":"2025-05-30","views":2091,"reach":1410,"likes":50,"comments":3,"shares":6,"saves":0,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"Built with patience","er":4.18,"viral":false},{"n":11,"date":"2025-05-31","views":2110,"reach":1452,"likes":48,"comments":1,"shares":5,"saves":2,"follows":9,"format":"Reel","category":"Composite/Lam","caption":"Bam-ba-lam","er":3.86,"viral":false},{"n":12,"date":"2025-06-03","views":6580,"reach":5316,"likes":67,"comments":7,"shares":15,"saves":1,"follows":7,"format":"Reel","category":"CNC Machining","caption":"CNC capacity available","er":1.69,"viral":false},{"n":13,"date":"2025-06-17","views":943,"reach":683,"likes":12,"comments":0,"shares":1,"saves":0,"follows":1,"format":"Reel","category":"Services/Other","caption":"Solace 37CS on TV","er":1.9,"viral":false},{"n":14,"date":"2025-06-23","views":1521,"reach":1064,"likes":35,"comments":2,"shares":4,"saves":2,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Finish your mold deserves","er":4.04,"viral":false},{"n":15,"date":"2025-06-26","views":5825,"reach":3934,"likes":48,"comments":3,"shares":11,"saves":6,"follows":11,"format":"Reel","category":"CNC Machining","caption":"CNC feed rate precision","er":1.73,"viral":false},{"n":16,"date":"2025-07-03","views":1764,"reach":1175,"likes":37,"comments":0,"shares":0,"saves":0,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Mold shipped to customer","er":3.15,"viral":false},{"n":17,"date":"2025-07-04","views":1619,"reach":1090,"likes":31,"comments":1,"shares":3,"saves":0,"follows":1,"format":"Reel","category":"Services/Other","caption":"4th of July shine","er":3.21,"viral":false},{"n":18,"date":"2025-07-06","views":1558,"reach":1131,"likes":31,"comments":0,"shares":4,"saves":1,"follows":2,"format":"Reel","category":"Naval Arch/Design","caption":"Solace 41CS naval architecture","er":3.18,"viral":false},{"n":19,"date":"2025-07-29","views":2268,"reach":893,"likes":30,"comments":1,"shares":2,"saves":5,"follows":0,"format":"Carousel","category":"Naval Arch/Design","caption":"Alera debut model","er":4.26,"viral":false},{"n":20,"date":"2025-08-06","views":1519,"reach":1033,"likes":38,"comments":3,"shares":4,"saves":3,"follows":1,"format":"Reel","category":"Mold/Tooling","caption":"Deck mold ready for work","er":4.65,"viral":false},{"n":21,"date":"2025-08-22","views":1801,"reach":1136,"likes":13,"comments":0,"shares":1,"saves":1,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Dry layup for infusion","er":1.32,"viral":false},{"n":22,"date":"2025-10-27","views":3136,"reach":1414,"likes":75,"comments":0,"shares":8,"saves":3,"follows":6,"format":"Image","category":"Services/Other","caption":"Team milestone 25 to 60 employees","er":6.08,"viral":false},{"n":23,"date":"2026-02-18","views":2491,"reach":1770,"likes":40,"comments":1,"shares":4,"saves":0,"follows":6,"format":"Reel","category":"Services/Other","caption":"Sharp execution early mornings","er":2.88,"viral":false},{"n":24,"date":"2026-03-03","views":1431,"reach":628,"likes":34,"comments":4,"shares":2,"saves":3,"follows":2,"format":"Carousel","category":"Naval Arch/Design","caption":"Veyra 60 concept","er":7.17,"viral":false},{"n":25,"date":"2026-03-04","views":977,"reach":556,"likes":9,"comments":1,"shares":0,"saves":0,"follows":0,"format":"Image","category":"CNC Machining","caption":"CNC availability ad","er":1.80,"viral":false},{"n":26,"date":"2026-03-18","views":4907,"reach":3284,"likes":57,"comments":1,"shares":3,"saves":0,"follows":0,"format":"Reel","category":"Composite/Lam","caption":"Clean layup fiberglass","er":1.86,"viral":false},{"n":27,"date":"2026-03-20","views":2608,"reach":1709,"likes":53,"comments":1,"shares":6,"saves":7,"follows":7,"format":"Reel","category":"Services/Other","caption":"Running full next slot open","er":4.33,"viral":false},{"n":28,"date":"2026-04-01","views":1997,"reach":1364,"likes":21,"comments":1,"shares":4,"saves":2,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Mold high-gloss finish","er":2.20,"viral":false},{"n":29,"date":"2026-04-06","views":2354,"reach":1612,"likes":17,"comments":0,"shares":1,"saves":0,"follows":2,"format":"Reel","category":"Naval Arch/Design","caption":"Tech for teams model review","er":1.24,"viral":false},{"n":30,"date":"2026-04-08","views":9193,"reach":7387,"likes":60,"comments":1,"shares":23,"saves":3,"follows":9,"format":"Reel","category":"CNC Machining","caption":"Full design cycle CNC to life","er":1.30,"viral":false},{"n":31,"date":"2026-05-20","views":2760,"reach":1895,"likes":24,"comments":0,"shares":5,"saves":1,"follows":3,"format":"Reel","category":"Mold/Tooling","caption":"Guide coat roadmap","er":1.74,"viral":false},{"n":32,"date":"2026-05-21","views":7525,"reach":5728,"likes":91,"comments":0,"shares":11,"saves":9,"follows":24,"format":"Reel","category":"Composite/Lam","caption":"Bubble blasting hand laid","er":2.36,"viral":false},{"n":33,"date":"2026-05-23","views":3632,"reach":2366,"likes":28,"comments":0,"shares":3,"saves":3,"follows":11,"format":"Reel","category":"Mold/Tooling","caption":"Pure plug perfection","er":1.90,"viral":false},{"n":34,"date":"2026-06-04","views":3664,"reach":2264,"likes":81,"comments":2,"shares":10,"saves":10,"follows":4,"format":"Reel","category":"Naval Arch/Design","caption":"Digital twin what work looks like","er":4.72,"viral":false},{"n":35,"date":"2026-06-05","views":1750,"reach":1240,"likes":13,"comments":0,"shares":6,"saves":3,"follows":1,"format":"Reel","category":"CNC Machining","caption":"DMS CNC teaser","er":1.85,"viral":false},{"n":36,"date":"2026-06-07","views":3654,"reach":2376,"likes":54,"comments":1,"shares":17,"saves":0,"follows":6,"format":"Reel","category":"CNC Machining","caption":"DMS CNC installation timelapse","er":3.28,"viral":false},{"n":37,"date":"2026-06-08","views":2751,"reach":1438,"likes":18,"comments":0,"shares":1,"saves":2,"follows":1,"format":"Reel","category":"Defense","caption":"Defense USV concept to deployment","er":1.53,"viral":false},{"n":38,"date":"2026-06-15","views":4725,"reach":2993,"likes":57,"comments":4,"shares":3,"saves":2,"follows":5,"format":"Reel","category":"Mold/Tooling","caption":"Quality assurance finishing process","er":2.37,"viral":false},{"n":39,"date":"2026-06-17","views":203168,"reach":106283,"likes":613,"comments":8,"shares":94,"saves":108,"follows":381,"format":"Reel","category":"CNC Machining","caption":"While the world sleeps CNC timelapse","er":1.13,"viral":true},{"n":40,"date":"2026-06-19","views":2490,"reach":1422,"likes":26,"comments":0,"shares":1,"saves":4,"follows":0,"format":"Reel","category":"CNC Machining","caption":"CNC toolpath customer vision","er":2.18,"viral":false},{"n":41,"date":"2026-06-23","views":7789,"reach":5433,"likes":71,"comments":3,"shares":6,"saves":10,"follows":15,"format":"Reel","category":"Composite/Lam","caption":"Every detail every pass","er":1.93,"viral":false},{"n":42,"date":"2026-06-26","views":5088,"reach":3245,"likes":42,"comments":0,"shares":8,"saves":3,"follows":4,"format":"Reel","category":"Composite/Lam","caption":"Sportfish layer by layer","er":1.76,"viral":false},{"n":43,"date":"2026-06-30","views":7754,"reach":4785,"likes":165,"comments":4,"shares":39,"saves":10,"follows":33,"format":"Reel","category":"Mold/Tooling","caption":"Luke approves ship it","er":5.25,"viral":false},{"n":44,"date":"2026-07-02","views":6688,"reach":4417,"likes":53,"comments":0,"shares":2,"saves":3,"follows":14,"format":"Reel","category":"Composite/Lam","caption":"Fresh clean lamination","er":1.63,"viral":false},{"n":45,"date":"2026-07-05","views":4462,"reach":3131,"likes":38,"comments":1,"shares":1,"saves":2,"follows":5,"format":"Reel","category":"Composite/Lam","caption":"No shortcuts skilled hands","er":1.50,"viral":false},{"n":46,"date":"2026-07-06","views":3789,"reach":2484,"likes":72,"comments":1,"shares":11,"saves":2,"follows":35,"format":"Image","category":"Naval Arch/Design","caption":"Unveiling soon classic lines","er":4.87,"viral":false},{"n":47,"date":"2026-07-08","views":4028,"reach":2933,"likes":29,"comments":1,"shares":4,"saves":5,"follows":1,"format":"Reel","category":"CNC Machining","caption":"Let er eat CNC","er":1.36,"viral":false},{"n":48,"date":"2026-07-09","views":6670,"reach":4460,"likes":173,"comments":5,"shares":26,"saves":17,"follows":15,"format":"Reel","category":"Defense","caption":"Defense concept to water-ready USV","er":5.29,"viral":false},{"n":49,"date":"2026-07-10","views":7186,"reach":4935,"likes":23,"comments":0,"shares":11,"saves":4,"follows":5,"format":"Reel","category":"CNC Machining","caption":"Measured methodical made right","er":0.87,"viral":false},{"n":50,"date":"2026-07-12","views":3149,"reach":2199,"likes":22,"comments":0,"shares":2,"saves":2,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Careful sanding radius checks","er":1.27,"viral":false},{"n":51,"date":"2026-07-13","views":1977,"reach":1090,"likes":24,"comments":0,"shares":4,"saves":1,"follows":1,"format":"Reel","category":"Composite/Lam","caption":"Anticipation is building","er":2.75,"viral":false},{"n":52,"date":"2026-07-15","views":5442,"reach":4010,"likes":106,"comments":5,"shares":31,"saves":7,"follows":15,"format":"Reel","category":"CNC Machining","caption":"Sound effects with the team","er":4.09,"viral":false},{"n":53,"date":"2026-07-17","views":2665,"reach":1872,"likes":52,"comments":0,"shares":6,"saves":5,"follows":6,"format":"Reel","category":"Mold/Tooling","caption":"You don't rush a finish like this","er":3.69,"viral":false},{"n":54,"date":"2026-07-19","views":7157,"reach":4324,"likes":105,"comments":2,"shares":55,"saves":12,"follows":9,"format":"Reel","category":"Naval Arch/Design","caption":"Savage SSI35 grand reveal","er":4.23,"viral":false},{"n":55,"date":"2026-07-20","views":5490,"reach":2609,"likes":74,"comments":0,"shares":20,"saves":17,"follows":22,"format":"Reel","category":"Composite/Lam","caption":"Resin down glass on","er":5.10,"viral":false},{"n":56,"date":"2026-07-23","views":2385,"reach":1659,"likes":27,"comments":0,"shares":5,"saves":1,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"Nobody likes imperfections. Quality assurance every step","er":1.99,"viral":false},{"n":57,"date":"2026-07-25","views":2308,"reach":1571,"likes":31,"comments":0,"shares":5,"saves":1,"follows":3,"format":"Reel","category":"Mold/Tooling","caption":"Slowing it down to capture the finesse","er":2.55,"viral":false},{"n":58,"date":"2026-07-27","views":2049,"reach":921,"likes":40,"comments":0,"shares":9,"saves":0,"follows":2,"format":"Carousel","category":"Naval Arch/Design","caption":"The American day boat, reimagined. Refined aggression, handcrafted detail, luxury throughout","er":5.54,"viral":false},{"n":59,"date":"2026-07-30","views":3863,"reach":2811,"likes":54,"comments":3,"shares":4,"saves":9,"follows":9,"format":"Reel","category":"Defense","caption":"Built for the mission from the inside out","er":2.81,"viral":false},{"n":60,"date":"2026-07-31","views":5083,"reach":3365,"likes":70,"comments":2,"shares":9,"saves":14,"follows":10,"format":"Reel","category":"CNC Machining","caption":"Bringing another customer's dream to life","er":3.12,"viral":false},{"n":61,"date":"2026-08-03","views":1990,"reach":1337,"likes":32,"comments":1,"shares":2,"saves":1,"follows":3,"format":"Reel","category":"Mold/Tooling","caption":"On top of our game bringing out the perfect shine","er":2.92,"viral":false},{"n":62,"date":"2026-08-07","views":4220,"reach":3032,"likes":31,"comments":2,"shares":1,"saves":1,"follows":2,"format":"Reel","category":"Composite/Lam","caption":"Watch closely and you can see the glass change as the roller goes over it. Goes clear where the resin has full contact and the air is out.","er":1.22,"viral":false},{"n":63,"date":"2026-08-10","views":3466,"reach":2285,"likes":52,"comments":0,"shares":18,"saves":10,"follows":6,"format":"Reel","category":"CNC Machining","caption":"Every pass was programmed before the spindle touched the material. The machine doesn't stop. Neither do we.","er":3.76,"viral":false},{"n":64,"date":"2026-08-12","views":5705,"reach":3630,"likes":135,"comments":4,"shares":54,"saves":8,"follows":11,"format":"Reel","category":"Naval Arch/Design","caption":"New model alert. Construction of hull 1 is under way.","er":5.84,"viral":false},{"n":65,"date":"2026-08-13","views":4829,"reach":3108,"likes":103,"comments":2,"shares":33,"saves":15,"follows":27,"format":"Reel","category":"Mold/Tooling","caption":"Luke takes us through our mold inspection and QC process. Here is what he checks and why it matters.","er":5.79,"viral":false},{"n":66,"date":"2026-08-17","views":2298,"reach":1533,"likes":41,"comments":1,"shares":1,"saves":5,"follows":0,"format":"Reel","category":"Mold/Tooling","caption":"We use Dykem as our guide coat during mold finishing. It makes highs and lows easy to identify.","er":3.13,"viral":false},{"n":67,"date":"2026-08-21","views":4446,"reach":3201,"likes":115,"comments":0,"shares":12,"saves":13,"follows":21,"format":"Reel","category":"CNC Machining","caption":"Final machining on the spraycore. Last step on the CNC before we block sand away the tooling paths, refine the radius details by hand, and prepare for surface primer application.","er":5.03,"viral":false},{"n":68,"date":"2026-08-26","views":2120,"reach":1326,"likes":50,"comments":0,"shares":10,"saves":7,"follows":4,"format":"Reel","category":"Mold/Tooling","caption":"Finished, wrapped, and ready to ship. Another plug out the door.","er":5.35,"viral":false},{"n":69,"date":"2026-09-01","views":10693,"reach":7880,"likes":162,"comments":1,"shares":18,"saves":20,"follows":27,"format":"Reel","category":"Composite/Lam","caption":"Stay tuned to follow the build progress of this Savage 35","er":2.89,"viral":false},
+{"n":70,"date":"2026-09-10","views":7133,"reach":5114,"likes":129,"comments":0,"shares":16,"saves":26,"follows":16,"format":"Reel","category":"Composite/Lam","caption":"Savage 35 hull 1 infusion. Stay tuned for build updates.","song":"Have Love Will Travel - The Black Keys","er":3.66,"viral":false},
+{"n":71,"date":"2026-09-14","views":3473,"reach":2670,"likes":72,"comments":0,"shares":3,"saves":6,"follows":7,"format":"Reel","category":"Mold/Tooling","caption":"Finishing touches before final QC and ship.","song":"The Weekend","er":3.30,"viral":false},
+{"n":72,"date":"2026-09-18","views":1339,"reach":820,"likes":25,"comments":1,"shares":4,"saves":6,"follows":2,"format":"Reel","category":"Mold/Tooling","caption":"Team Lead Brian takes us through our plug fabrication process, from fresh off the mill to the handoff with our lamination team.","song":"YoungBoy Never Broke Again - Instrumental","er":4.63,"viral":false},
+{"n":73,"date":"2026-09-28","views":5467,"reach":3815,"likes":82,"comments":1,"shares":34,"saves":22,"follows":23,"format":"Reel","category":"CNC Machining","caption":"Block by block, it starts to take shape. From raw foam to CNC precision.","song":"Bad to the Bone - George Thorogood","er":4.25,"viral":false}];
 
 // ── HASHTAGS PER POST (collected Aug 12, 2026) ─────────────
 // null = data not collected (posts n=1-15 predated crawl; n=25,41,46 had no hashtags)
@@ -734,7 +780,40 @@ const TAGS={
   66:["#boatbuilding","#compositetooling","#marinemanufacturing","#moldmaking","#howitsmade"],
   67:["#cnc","#cncmachining","#howitsmade","#boatbuilding","#cncmilling"],
   68:["#moldmaking","#boatbuilder","#compositetooling","#marinecomposites","#howitsmade"],
-  69:["#moldmaking","#boatbuilding","#lamination","#fiberglass","#marinecomposites"]
+  69:["#moldmaking","#boatbuilding","#lamination","#fiberglass","#marinecomposites"],
+  70:["#moldmaking","#boatbuilding","#lamination","#fiberglass","#marinecomposites"],
+  71:["#moldmaking","#boatbuilding","#fiberglass","#marinecomposites","#lamination"],
+  72:["#tooling","#boatbuilding","#composites","#howitsmade","#moldmaking"],
+  73:["#cnc","#howitsmade","#cncmachining","#compositemanufacturing","#cncfoam"]
+};
+
+// ── POST TIMES (from Meta Business Suite CSV exports) ────────────────────────
+// n=1-22 predated CSV availability; n=23-73 have exact publish times (EST)
+const POSTTIMES={
+  23:"13:10",24:"19:58",25:"05:15",26:"15:31",27:"04:30",28:"10:01",
+  29:"14:17",30:"09:23",31:"13:10",32:"09:02",33:"06:35",34:"15:15",
+  35:"12:00",36:"06:00",37:"12:00",38:"04:50",39:"14:31",40:"18:32",
+  41:"15:39",42:"09:00",43:"14:00",44:"15:00",45:"15:59",46:"15:03",
+  47:"15:04",48:"10:26",49:"15:00",50:"15:00",51:"03:50",52:"15:00",
+  53:"14:36",54:"04:41",55:"14:45",56:"15:01",57:"12:00",58:"12:00",
+  59:"15:10",60:"15:05",61:"15:51",62:"11:00",63:"13:45",64:"15:55",
+  65:"12:00",66:"12:39",67:"12:00",68:"14:19",69:"11:42",70:"13:49",
+  71:"14:18",72:"14:43",73:"12:00"
+};
+
+// ── POST DAYS OF WEEK (calculated from publish dates) ───────────────────────
+const POSTDAYS={
+  1:"Tue",2:"Wed",3:"Thu",4:"Fri",5:"Mon",6:"Tue",7:"Thu",8:"Fri",
+  9:"Tue",10:"Fri",11:"Sat",12:"Tue",13:"Tue",14:"Mon",15:"Thu",
+  16:"Thu",17:"Fri",18:"Sun",19:"Tue",20:"Wed",21:"Fri",22:"Mon",
+  23:"Wed",24:"Tue",25:"Wed",26:"Wed",27:"Fri",28:"Wed",29:"Mon",
+  30:"Wed",31:"Wed",32:"Thu",33:"Sat",34:"Thu",35:"Fri",36:"Sun",
+  37:"Mon",38:"Mon",39:"Wed",40:"Fri",41:"Tue",42:"Fri",43:"Tue",
+  44:"Thu",45:"Sun",46:"Mon",47:"Wed",48:"Thu",49:"Fri",50:"Sun",
+  51:"Mon",52:"Wed",53:"Fri",54:"Sun",55:"Mon",56:"Thu",57:"Sat",
+  58:"Mon",59:"Thu",60:"Fri",61:"Mon",62:"Fri",63:"Mon",64:"Wed",
+  65:"Thu",66:"Mon",67:"Fri",68:"Wed",69:"Tue",70:"Thu",71:"Mon",
+  72:"Fri",73:"Mon"
 };
 
 // ── COLORS ─────────────────────────────────────────────────
@@ -1073,8 +1152,12 @@ function buildAllPosts(posts){
       return `<span style="font-size:.6rem;padding:1px 4px;border-radius:3px;margin:1px;display:inline-block;background:${bad?'rgba(231,76,60,.18)':(lc==='#boatbuilder'||lc==='#moldmaking'||lc==='#cnc'||lc==='#cncmachining'?'rgba(82,109,114,.18)':(lc==='#qualitycontrol'?'rgba(231,76,60,.18)':' rgba(30,48,68,.6)'))};color:${bad?'#e74c3c':'#c8d8e2'}">${t}</span>`;
     }).join('');
     const tCell=tagArr.length===0?'<span style="color:#3d5a66;font-size:.62rem">-</span>':tagsHtml;
+    const dayStr=POSTDAYS[p.n]||'';
+    const timeStr=POSTTIMES[p.n]||'';
     apB.innerHTML+=`<tr${cls}><td><b style="color:#526D72">#${p.n}</b></td>
       <td style="white-space:nowrap">${p.date}</td>
+      <td style="font-size:.72rem;white-space:nowrap">${dayStr}</td>
+      <td style="font-size:.72rem;white-space:nowrap">${timeStr}</td>
       <td>${p.format}</td><td style="font-size:.68rem">${p.category}</td>
       <td style="max-width:160px;font-size:.7rem">${p.caption}${vb}</td>
       <td style="max-width:200px">${tCell}</td>
@@ -1120,6 +1203,7 @@ function renderAll(range){
   buildTimeDay(posts2, tdVOn);
   buildMusic(posts2);
   buildDetails(posts2);
+  buildPostingPatterns(posts);
 }
 
 // ── EVENT HANDLERS ─────────────────────────────────────────
@@ -1312,6 +1396,43 @@ function buildTagFreq(){
     body.innerHTML+=`<tr><td>${tagCell}</td><td class="nr">${d.count}</td><td class="nr">${avg(d.views).toLocaleString()}</td><td class="nr">${avgER(d.er)}%</td><td class="nr">${avg(d.saves)}</td><td>${era}</td></tr>`;
   });
 }
+// ── POSTING PATTERNS (Overview) ────────────────────────────
+function buildPostingPatterns(posts){
+  kc('dayViewC');kc('pdErC');kc('timeViewC');kc('timeFollowC');
+  const avg=arr=>arr.length?Math.round(arr.reduce((s,v)=>s+v,0)/arr.length):0;
+  const favg=arr=>arr.length?parseFloat((arr.reduce((s,v)=>s+v,0)/arr.length).toFixed(2)):0;
+  const DOW=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const dm={};DOW.forEach(d=>dm[d]={views:[],er:[],cnt:0});
+  posts.filter(p=>!p.viral).forEach(p=>{
+    const d=POSTDAYS[p.n];if(!d||!dm[d])return;
+    dm[d].cnt++;dm[d].views.push(p.views);dm[d].er.push(p.er);
+  });
+  const days=DOW.filter(d=>dm[d].cnt>0);
+  const dLabels=days.map(d=>d+' ('+dm[d].cnt+')');
+  charts['dayViewC']=new Chart(document.getElementById('dayViewC'),{type:'bar',
+    data:{labels:dLabels,datasets:[{label:'Avg Views (excl. viral)',data:days.map(d=>avg(dm[d].views)),backgroundColor:TLTA,borderColor:TEAL,borderWidth:1.5,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:GRD},y:{grid:GRD,ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}});
+  charts['pdErC']=new Chart(document.getElementById('pdErC'),{type:'bar',
+    data:{labels:dLabels,datasets:[{label:'Avg ER%',data:days.map(d=>favg(dm[d].er)),backgroundColor:GLTA,borderColor:GOLD,borderWidth:1.5,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:GRD},y:{grid:GRD,ticks:{callback:v=>v+'%'}}}}});
+  // Time buckets (n=23-73 only — confirmed publish times)
+  const TB=['Morning','Afternoon','Evening','Off-Hours'];
+  const tm={Morning:{views:[],follows:[],cnt:0},Afternoon:{views:[],follows:[],cnt:0},Evening:{views:[],follows:[],cnt:0},'Off-Hours':{views:[],follows:[],cnt:0}};
+  posts.filter(p=>!p.viral&&p.n>=23&&POSTTIMES[p.n]).forEach(p=>{
+    const h=parseInt(POSTTIMES[p.n].split(':')[0]);
+    const b=h>=6&&h<12?'Morning':h>=12&&h<18?'Afternoon':h>=18&&h<24?'Evening':'Off-Hours';
+    tm[b].cnt++;tm[b].views.push(p.views);tm[b].follows.push(p.follows||0);
+  });
+  const tbs=TB.filter(b=>tm[b].cnt>0);
+  const tbLabels=tbs.map(b=>b+' ('+tm[b].cnt+')');
+  charts['timeViewC']=new Chart(document.getElementById('timeViewC'),{type:'bar',
+    data:{labels:tbLabels,datasets:[{label:'Avg Views',data:tbs.map(b=>avg(tm[b].views)),backgroundColor:TLTA,borderColor:TEAL,borderWidth:1.5,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:GRD},y:{grid:GRD,ticks:{callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}});
+  charts['timeFollowC']=new Chart(document.getElementById('timeFollowC'),{type:'bar',
+    data:{labels:tbLabels,datasets:[{label:'Avg Follows',data:tbs.map(b=>favg(tm[b].follows)),backgroundColor:GLTA,borderColor:GOLD,borderWidth:1.5,borderRadius:4}]},
+    options:{responsive:true,maintainAspectRatio:true,plugins:{legend:{display:false}},scales:{x:{grid:GRD},y:{grid:GRD}}}});
+}
+
 function buildDetails(p2){
   kc('durC');kc('playC');
   const avg=arr=>arr.length?Math.round(arr.reduce((s,v)=>s+v,0)/arr.length):0;
